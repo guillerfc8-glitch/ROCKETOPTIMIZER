@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rocket Optimizer</title>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#050505;
+  color:white;
+}
+
+/* INTRO */
+#intro{
+  position:fixed;
+  width:100%;
+  height:100vh;
+  background:#050505;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:999;
+}
+#intro h1{font-size:50px;letter-spacing:4px;}
+#enterBtn{
+  margin-top:20px;
+  padding:12px 40px;
+  border:1px solid #555;
+  background:transparent;
+  color:white;
+  cursor:pointer;
+}
+#enterBtn:hover{background:white;color:black}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  padding:15px 30px;
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+}
+nav a{
+  margin:10px;
+  color:#aaa;
+  text-decoration:none;
+}
+nav a:hover{color:white}
+
+/* HERO */
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:80px;
+  min-height:100vh;
+}
+.hero-text{
+  max-width:500px;
+}
+.hero-text h1{
+  font-size:50px;
+  line-height:1.2;
+}
+.hero-text span{color:#7aa2ff;}
+.hero-text p{color:#aaa}
+
+/* STATS */
+.stats{
+  display:flex;
+  gap:30px;
+  margin-top:30px;
+}
+.stat{
+  font-size:12px;
+  color:#aaa;
+}
+
+/* IMAGEN */
+.hero-img{
+  width:500px;
+  height:300px;
+  border-radius:20px;
+  background:url('rocket.png') center/cover no-repeat;
+  box-shadow:0 0 50px rgba(255,255,255,0.05);
+}
+
+/* SECCIONES */
+section{
+  padding:60px 20px;
+  text-align:center;
+}
+
+/* CARDS */
+.cards{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:20px;
+  border-radius:10px;
+  width:220px;
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-10px);
+}
+
+/* FAQ */
+.faq-item{
+  margin:15px auto;
+  max-width:500px;
+  text-align:left;
+  cursor:pointer;
+  border-bottom:1px solid #333;
+}
+.faq-item p{
+  display:none;
+  color:#aaa;
+}
+.faq-item.active p{
+  display:block;
+}
+
+/* FORM */
+form{
+  display:flex;
+  flex-direction:column;
+  max-width:400px;
+  margin:auto;
+  gap:10px;
+}
+input,select,textarea{
+  padding:10px;
+  background:#111;
+  border:1px solid #333;
+  color:white;
+}
+button{
+  padding:10px;
+  background:white;
+  border:none;
+  cursor:pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-img{
+    width:100%;
+    margin-top:30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+  <h1>ROCKET OPTIMIZER</h1>
+  <button id="enterBtn">Entrar</button>
+</div>
+
+<header>
+  <h2>Rocket Optimizer</h2>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#info">Info</a>
+    <a href="#packs">Packs</a>
+    <a href="#faq">FAQ</a>
+    <a href="#pedido">Pedido</a>
+  </nav>
+</header>
+
+<!-- INICIO -->
+<section id="inicio" class="hero">
+  <div class="hero-text">
+    <h1>
+      MÁS FPS.<br>
+      MENOS DELAY.<br>
+      MEJOR <span>RENDIMIENTO</span>.
+    </h1>
+
+    <p>Optimización avanzada para sacar el máximo rendimiento a tu PC gaming.</p>
+
+    <div class="stats">
+      <div class="stat">⚡ 0 DELAY</div>
+      <div class="stat">📈 MÁS FPS</div>
+      <div class="stat">📶 MEJOR PING</div>
+      <div class="stat">⚙️ SISTEMA OPTIMIZADO</div>
+    </div>
+  </div>
+
+  <div class="hero-img"></div>
+</section>
+
+<!-- INFO -->
+<section id="info">
+  <h2>¿Qué hacemos?</h2>
+  <p>Optimizamos tu PC para juegos y rendimiento general. Menos lag, más estabilidad y mejor experiencia.</p>
+</section>
+
+<!-- PACKS -->
+<section id="packs">
+  <h2>Packs</h2>
+  <div class="cards">
+    <div class="card"><h3>Pack 0 Delay</h3><p>5€</p></div>
+    <div class="card"><h3>Elite Pack</h3><p>6,50€</p></div>
+    <div class="card"><h3>Elite Pack Plus</h3><p>10€</p></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <h2>Preguntas frecuentes</h2>
+
+  <div class="faq-item">
+    <h3>¿Es seguro?</h3>
+    <p>Sí, no dañamos tu sistema.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>¿Cuánto tarda?</h3>
+    <p>Entre 1 y 3 horas.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>¿Se nota el cambio?</h3>
+    <p>Sí, mejora inmediata en juegos.</p>
+  </div>
+</section>
+
+<!-- PEDIDO -->
+<section id="pedido">
+  <h2>Haz tu pedido</h2>
+
+  <form id="form">
+    <input type="text" name="user_name" placeholder="Nombre" required>
+    <input type="email" name="user_email" placeholder="Email" required>
+
+    <select name="pack">
+      <option>Pack 0 Delay</option>
+      <option>Elite Pack</option>
+      <option>Elite Pack Plus</option>
+    </select>
+
+    <textarea name="details" placeholder="Detalles"></textarea>
+
+    <button type="submit">Enviar pedido</button>
+  </form>
+</section>
+
+<script>
+// INTRO
+document.getElementById("enterBtn").onclick=()=>{
+  document.getElementById("intro").style.display="none";
+};
+
+// FAQ
+document.querySelectorAll(".faq-item").forEach(item=>{
+  item.addEventListener("click",()=>{
+    item.classList.toggle("active");
+  });
+});
+
+// EMAILJS CONFIGURADO
+(function(){
+  emailjs.init("nH6o-z0EhuYaUzZKn");
+})();
+
+document.getElementById("form").addEventListener("submit",function(e){
+  e.preventDefault();
+
+  emailjs.sendForm("service_l6gzpzf","template_k33aj25",this)
+  .then(()=>alert("Pedido enviado a tu Gmail"));
+});
+</script>
+
+</body>
+</html>
